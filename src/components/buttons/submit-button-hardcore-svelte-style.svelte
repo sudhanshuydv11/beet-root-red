@@ -88,7 +88,6 @@
   }
 
   .btn-text {
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
     letter-spacing: 0.2rem;

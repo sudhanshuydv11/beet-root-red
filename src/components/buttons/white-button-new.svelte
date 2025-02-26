@@ -34,7 +34,7 @@
     display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Poppins';
+      
       align-items: center;
       padding: 1em 8em;
       font-size: 0.8rem;
@@ -87,7 +87,7 @@
 
 /* 
     &-text{
-        font-family: 'Poppins';
+        
         font-size: clamp(1rem, 3rem, 4rem);
         font-weight: 280;
         color: white;

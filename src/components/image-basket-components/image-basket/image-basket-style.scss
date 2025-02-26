@@ -21,7 +21,6 @@ $scaleX:calc(1/ var(--totalItems));
 
         &-description{
             position: absolute;
-            font-family:'Helvetica-Bold';
             top: 10cqh;
             left: 0;
             right: 0;
@@ -46,11 +45,10 @@ $scaleX:calc(1/ var(--totalItems));
         right: calc(65cqw) ;
         top: calc(calc(100cqh - 11cqh) );
         padding-bottom: 5.6vh;
-        font-family: 'Helvetica';   
         background: transparent;
         align-items: center;
         justify-content: center;
-        font-family: 'Poppins';
+        
         align-items: center;
         padding: 1em 3em;
         font-size: 0.8rem;

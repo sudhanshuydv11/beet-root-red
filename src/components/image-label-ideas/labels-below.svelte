@@ -46,7 +46,6 @@
   
     .label-card {
       text-align: center;
-      font-family: 'Helvetica';
       font-size: 0.8rem;
       border: 1px solid #ccc;
       padding: 10px;
@@ -63,7 +62,6 @@
     .area-title h1{
       text-align: center;
       font-size: 2rem;
-      font-family: 'Oswald';
       font-weight: 200;
       margin: 0;
       padding: 2rem 0;

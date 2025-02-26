@@ -8,7 +8,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Poppins';
+      
       align-items: center;
       padding: 1em 8em;
       font-size: 0.8rem;

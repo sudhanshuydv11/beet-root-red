@@ -64,19 +64,16 @@ $doubleSlashSpacing:0.2rem;
 
                     & > .type{
                         font-size: 1.8rem;
-                        font-family: 'Helvetica';
                     }
                     
                     & > .name{
                         font-size: 1.8rem;
-                        font-family: 'Helvetica-Heavy';
                     } 
 
                     & > .model{
                         margin-top: 7%;
                         font-size: .8rem;
                         text-transform: uppercase;
-                        font-family: 'Helvetica-Roman';
                         letter-spacing: $doubleSlashSpacing;
                     } 
 
@@ -84,7 +81,6 @@ $doubleSlashSpacing:0.2rem;
                         margin-top: 2%;
                         font-size: .8rem;
                         text-transform: uppercase;
-                        font-family: 'Helvetica-Roman';
                         letter-spacing: $doubleSlashSpacing;
                     }
                     
@@ -92,7 +88,6 @@ $doubleSlashSpacing:0.2rem;
                         margin-top: 7%;
                         font-size: 0.8rem;
                         line-height: 1.3rem;
-                        font-family: 'Helvetica';
                     } 
                 }
 

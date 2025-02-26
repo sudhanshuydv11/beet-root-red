@@ -87,7 +87,6 @@
         margin: 0;
         padding: 0;
         text-align: left;
-        font-family: 'Helvetica-Roman';
         border-radius: 0;
     }
     
