@@ -1,0 +1,16 @@
+$menuIconHeight:4rem;
+$menuIconWidth: 6rem;
+
+@media (width < 100vh ) {
+
+:root{
+   --nav-container-width: #{90%};
+    }
+}
+
+@media (width >= 100vh ) {
+
+    :root{
+       --nav-container-width: #{73%};
+        }
+}

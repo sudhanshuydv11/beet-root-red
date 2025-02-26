@@ -1,0 +1,44 @@
+@keyframes height-to-zero {
+    to{
+        height: 0;
+    }
+}
+
+@keyframes blur-background {
+    to{
+        background-color: rgb(30,30,30, 0.4);
+        backdrop-filter: blur(1rem) saturate(1.8);
+    }
+}
+
+@mixin change-on-scroll{
+    animation-timeline: scroll(y);
+    animation-range: 0 2rem;
+    animation-fill-mode: forwards;
+
+}
+
+.animate{
+    &-disappear{
+        animation-name: hide-element, height-to-zero ;
+        animation-timing-function: linear;
+        transform-origin: center bottom;
+        @include change-on-scroll;
+    
+    }
+    &-blur{
+        animation: blur-background linear;
+        @include change-on-scroll;
+    }
+    &-opacity{
+        &-to-zero{
+        animation: hide-element cubic-bezier(0.06, 1.1, 1, 1);
+        @include change-on-scroll;
+        }
+        &-to-one{
+            animation: un-hide-element cubic-bezier(1, 0.02, 1, 1);
+            @include change-on-scroll;
+        }
+    }
+
+}

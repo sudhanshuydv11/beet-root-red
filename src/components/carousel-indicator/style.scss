@@ -1,0 +1,51 @@
+
+
+@keyframes circular-progress{
+    0%{
+        stroke-dashoffset: 360;
+    }
+}
+
+@keyframes expand {
+    from{
+        transform:scale(0)
+    }
+}
+
+.glowing-indicator{
+    width: 2rem;
+    height: 2rem;
+    & >.indicator{
+        fill:none;
+        stroke:yellow;
+        left: 100px;
+        stroke-width: 8px;
+        transform-origin: center;
+        transition: 1s;
+        &--active{
+            fill:none;
+            stroke:aqua;
+            left: 100px;
+            stroke-width: 13px;
+            transform-origin: center;
+            transition: 1s;
+        }
+    }
+}
+
+
+.progress-indicator{
+opacity: 0;
+ &--active{
+    fill:none;
+    stroke: var(--stroke-color);
+    stroke-dasharray: 360;
+    stroke-width: 5px;
+    stroke-dashoffset: 230;
+    animation: circular-progress calc(var(--indicator-duration)*1ms) ;
+ }
+}
+
+.dumb-indicator{
+    fill: var(--fill-color);
+}

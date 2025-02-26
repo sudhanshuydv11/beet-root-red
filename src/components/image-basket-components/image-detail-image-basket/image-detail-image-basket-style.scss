@@ -1,0 +1,109 @@
+$doubleSlashSpacing:0.2rem;
+
+@keyframes delayed-border {
+    to{
+        border: white solid 2px;
+    }
+}
+
+.image-detail{
+    &-container{
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        background-color: #1E1E1E;
+    }
+    &-image-basket-container{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    &-clicked-item{
+        animation-name: delayed-border;
+        animation-fill-mode: forwards;
+        &.delay-border{
+            animation-delay: 1s;
+        }
+    }
+
+    &-background{
+
+        &-key-wrapper{
+            height: 100%;
+
+            &__hide{
+                opacity:0;
+            }
+
+        }
+    
+        &-container{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: 10% auto 11cqh;
+
+
+        
+            & > .header{
+            }
+        
+            & > .empty-row{
+            }
+        
+            & > .info-container{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+        
+                & > .text-content{
+                    color: white;
+                    width: 17rem;
+
+                    & > .type{
+                        font-size: 1.8rem;
+                        font-family: 'Helvetica';
+                    }
+                    
+                    & > .name{
+                        font-size: 1.8rem;
+                        font-family: 'Helvetica-Heavy';
+                    } 
+
+                    & > .model{
+                        margin-top: 7%;
+                        font-size: .8rem;
+                        text-transform: uppercase;
+                        font-family: 'Helvetica-Roman';
+                        letter-spacing: $doubleSlashSpacing;
+                    } 
+
+                    & > .manufacturing-place{
+                        margin-top: 2%;
+                        font-size: .8rem;
+                        text-transform: uppercase;
+                        font-family: 'Helvetica-Roman';
+                        letter-spacing: $doubleSlashSpacing;
+                    }
+                    
+                    & > .description{
+                        margin-top: 7%;
+                        font-size: 0.8rem;
+                        line-height: 1.3rem;
+                        font-family: 'Helvetica';
+                    } 
+                }
+
+                & > .carousel{
+                    width: 40rem;
+                    max-height:30rem;
+                    max-width: 90vw;
+                }
+            
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,25 @@
+.svg-with-text{
+    &-button{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        background-color: transparent;
+        border: none;
+        color: white;
+        text-align: left;
+
+        &-text{
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: 0.82rem;
+            letter-spacing: 0.1rem;
+            background-color: transparent;
+            margin-left: 0.3rem;
+            border: none;
+            color: white;
+        }
+        &:hover{
+            opacity: 70%;
+        }
+    }
+}

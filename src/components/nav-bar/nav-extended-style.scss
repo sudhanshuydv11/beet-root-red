@@ -1,0 +1,123 @@
+@import './nav-variables.scss';
+@import './nav-animations.scss';
+
+@keyframes un-hide-height {
+    from{
+        height: 0;
+        scrollbar-width: none;
+    }
+    to{
+        height: var(--content-height);
+        scrollbar-width: none;
+    }
+}
+
+@keyframes hide-height {
+    from{
+        
+        height: var(--content-height);
+        scrollbar-width: none;
+    }
+    to{
+        height: 0;
+        scrollbar-width: none;
+    }
+}
+
+.collapse-arrow{
+    transition: all ease-in-out 1s;
+}
+
+.nav{
+    &-extended{
+        &-wrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        &-dropdown-button{
+            background:transparent;
+            border: none;
+            padding: 0;
+            transition: ease-in-out 1s;
+            padding-bottom: 0.6rem;
+        }
+
+        &-head{
+            &-wrapper{
+                display: flex;
+                align-self: center;
+                background-color: transparent;
+                width: var(--nav-container-width);
+            }
+
+        }
+
+        &-options{
+            position: absolute;
+            top: 100%;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            background-color: white;
+            justify-content: center;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            height: 0;
+            --content-height:4rem;
+            &.open{
+                max-height:max-content;
+                height: var(--content-height);
+                animation: un-hide-height 1s;
+
+            }
+
+            &.close{
+                height: 0;
+                animation: hide-height 0.5s;
+
+            }
+
+            &-item{
+                padding: 1.5rem;
+                border: none;
+                background: transparent;
+                white-space: nowrap;
+                font-family: 'Poppins';
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@media (width<100vh) {
+    .nav-extended-options{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        --content-height:20rem;
+
+        &.open{
+            height: var(--content-height);
+        }
+
+        &-item{
+            width: 90%;
+            text-align: left;
+            border-bottom: 1px solid;
+            padding-left: 0;
+            &.last{
+                border-bottom: none;
+            }
+
+            &-container{
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+            }
+        }
+    }
+
+}

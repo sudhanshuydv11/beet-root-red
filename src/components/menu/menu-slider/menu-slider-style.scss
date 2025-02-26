@@ -1,0 +1,156 @@
+@import "../menu-animations-style.scss";
+
+$sub-menu-heading-height:max(20cqh,7rem);
+
+@keyframes scale-to-zero {
+    from{
+        transform: scaleX(1);
+    }
+    to{
+        transform: scaleX(0);
+    }
+}
+
+.activate-slider{
+    animation: expand-active 0.5s;
+}
+.hide-slider{
+    animation-name: scale-to-zero;
+    animation-duration: 1s;
+}
+
+.menu-slider{   
+    background-color: rgb(30,30,30, 0.4);
+    backdrop-filter: blur(1rem) saturate(1.8);
+    height:100vh;
+    width: 100vw;
+    min-width: 12rem;
+    max-width: 45rem;
+    display: flex;
+    justify-content: center;
+    transform-origin: left center;
+    &.hidden{
+        @extend .hide-slider;
+    }
+    &.active{
+        @extend .activate-slider;
+    }
+
+    &-items-wrapper{
+        width: 80%;
+    }
+
+    &-main-menu{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+    }
+    &-sub-menu{
+        @extend .menu-slider-main-menu;
+        transform-origin: left center;
+        justify-content: space-between;
+        row-gap: 9rem;
+
+        &-items-wrapper{
+            @extend .menu-slider-items-wrapper;
+            max-height: 65cqh;
+            overflow-y: auto;
+            &::-webkit-scrollbar{
+                width: 0.1rem;
+                background-color:transparent;
+            }
+            &::-webkit-scrollbar-thumb{
+                background:white;
+            }
+
+            &.hidden{
+                opacity: 0;
+                animation-name:translate-and-hide;
+                animation-duration: 0.5s;
+                --trh-direction:-1;
+            }
+        }
+
+        &-heading{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            position: absolute;
+            height: $sub-menu-heading-height;
+            width: 80%;
+            top:0;
+            left: 0;
+            opacity: 0;
+
+            &.active{
+                animation-name:translate-menu-items;
+                animation-duration: 0.6s;
+                animation-fill-mode: forwards;
+            }
+
+            &.hidden{
+                animation-name:translate-and-hide;
+                animation-duration: 0.2s;
+                --trh-direction:-1;
+            }
+
+            &-button{
+                align-self: flex-end;
+                border: none;
+                color: white;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                text-align: right;
+                font-family: 'Poppins';
+                font-weight: 400;
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+                opacity: 0.9;
+
+                &:hover{
+                    opacity: 1;
+                    .menu-slider-sub-menu-back-arrow{
+                        transform-origin: right;
+                        transform: translateX(-40%) scale(1.2);
+                        opacity: 1;
+                        transition: 0.4s;
+                    }
+                }
+                }
+        }
+
+        &.hidden{
+            @extend .hide-slider;
+            transform: scaleX(1);
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+        }
+        &.active{
+            @extend .activate-slider;
+        }
+
+        &--opened{
+            opacity: 0;
+            translate: 20cqw;
+            animation: translate-and-hide 0.1s;
+            --trh-direction:1;
+        }
+
+        &--closed{
+            opacity: 1;
+            translate: 0;
+            animation: untranslate-and-unhide 1s;
+        }
+
+        &-back-arrow{
+            display: flex;
+            transition: 0.5s;
+        }
+    }
+}

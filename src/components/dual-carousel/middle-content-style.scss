@@ -1,0 +1,41 @@
+.middle-content{
+    color: aliceblue;
+    padding: 0 10% 0 10%;
+    &-heading{
+        font-family:"Helvetica-Bold";
+        font-size: 1.1rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 3rem;
+    }
+
+    &-text{
+        font-family: "Helvetica";
+        font-size: 1rem;
+        line-height: 1.2rem;
+        // letter-spacing: 0.1rem;
+        margin-bottom: 3rem;
+    }
+
+    &-learn-more{
+        &-button{
+            font-size: 1rem !important;
+        }
+        &-img{
+            height: 2.5rem;
+        }
+        &-link{
+            text-decoration: none;
+        }
+    }
+}
+
+@media (width<100vh) {
+    .middle-content{
+        align-self: center;
+        text-align: center;
+    }
+
+    .middle-content-learn-more-container-mobile{
+        justify-content: center !important;
+    }
+}

@@ -1,0 +1,56 @@
+@import '../menu-animations-style.scss';
+
+@keyframes reverse-translate-menu-items {
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(calc(var(--tr-direction)*100cqw));
+    }
+}
+
+.menu-item{
+    text-align: right;
+    &-option{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        background-color: transparent;
+        color: white;
+        border: none;
+        letter-spacing: 0.1rem;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 1rem;
+    
+        &.hidden{
+            &-right{
+                opacity: 1;
+                animation-name: reverse-translate-menu-items;
+                animation-duration: 0.7s;
+                animation-fill-mode: forwards;
+                --tr-direction:1
+            }
+            &-left{
+                @extend .hidden-right;
+                --tr-direction:-1
+            }
+        }
+        &.active{   
+            transform: translateX(-100cqw);
+            animation-name: translate-menu-items;
+            animation-duration: 0.7s;
+            animation-fill-mode: forwards;
+            animation-delay: calc(var(--index) * 0.2s);
+            text-align: right;
+        }
+        &:hover{
+            opacity: 1;
+            animation-fill-mode: none;
+            transform: translateX(0);
+        }
+        
+    }
+}
