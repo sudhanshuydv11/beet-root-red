@@ -1,0 +1,12 @@
+@keyframes hide-element {
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes un-hide-element {
+
+    to{
+        opacity: 1;
+    }
+}
