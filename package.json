@@ -42,5 +42,8 @@
   "homepage": "https://github.com/sudhanshuydv11/beet-root-red#readme",
   "imports":{
     "#components/":"./src/components/"
+  },
+  "exports":{
+    ".":"./dist/main.bundle.js"
   }
 }
