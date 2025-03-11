@@ -44,6 +44,6 @@
     "#components/":"./src/components/"
   },
   "exports":{
-    ".":"./dist/main.bundle.js"
+    ".":"./index.js"
   }
 }
