@@ -1,0 +1,4 @@
+dist
+.gitignore
+README.md
+webpack.config.js
